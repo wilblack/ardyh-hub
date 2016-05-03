@@ -1,0 +1,242 @@
+$primary: #408E2F;
+$primary-light: #9AD58E;
+$primary-dark: #0C4700;
+
+$secondary: #256F5C;
+$secondary-light: #6FA698;
+$secondary-dark: #003729;
+
+$tertiary: #7B9F35;
+$tertiary-light: #D4EE9F;
+$tertiary-dark: #354F00;
+
+
+.right {
+    float:right;
+}
+
+.center-text {
+    text-align: center;
+}
+
+
+.margin-bottom {
+    margin-bottom: 2em;
+}
+
+.red {
+    color:#FF0000;
+}
+
+.blue {
+    color:#0000FF;
+}
+
+.green {
+    color:$primary;
+}
+
+.large-stat {
+    font-size: 2em;
+    color: $tertiary;
+}
+
+
+.change-directions {
+    display:inline-block;
+}
+
+
+ul[rn-carousel] {
+    max-width:400px;
+    height:280px;
+    margin: 0 auto;
+
+    img {
+        width:400px;
+    }
+}
+
+div[rn-carousel-indicators] {
+    text-align: center;
+
+    span {
+        color:$primary-light;
+        font-size:1.5em;
+    }
+
+    span.active {
+        color:$tertiary-dark;
+    }
+}
+
+
+.journal {
+    .media-left {
+        vertical-align: middle;
+        i.journal-type {
+            font-size: 2.5em;
+        }
+    }
+
+}
+
+.journal-type {
+    font-size:2em;
+}
+
+span.journal-type {
+    font-size:1.5em;
+}
+
+.list-group-item.active {
+    background-color: #EEE;
+    border-color: #DDD;
+
+    &:hover {
+        background-color: #EEE;
+        border-color: #DDD;
+    }
+
+}
+
+
+
+/************************
+Splash Screen
+*************************/
+
+[ng-cloak].splash-screen {
+    position: fixed;
+    top:0;
+    left:0;
+    display: block !important;
+    width:100%;
+    height:100%;
+    background-color: $tertiary-dark;
+
+    h3 {
+        height:100%;
+    }
+}
+
+.splash-screen {
+    display: none;
+}
+
+/*******************************
+Bot Panels
+*********************************/
+
+.large-stat {
+    font-size: 2em;
+    color: $tertiary-dark;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+
+    button {
+        flex-grow:1;
+    }
+    button:first-child {
+        margin-right: 3px;
+    }
+    button:last-child {
+        margin-left: 3px;
+    }
+
+}
+
+.bot-panel {
+
+    .panel-heading {
+        background-color: $primary-light;
+        h1, h2, h3, h4 {
+            display: inline;
+        }
+    }
+
+    .panel-body {
+    }
+}
+
+
+
+
+
+
+/************************
+BOT Graphs
+*************************/
+
+.y2 .tick {
+    opacity: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .legendWrap {
+        display:none;
+    }
+    g.multiChart > g {
+        transform: translate(40, 35);
+    }
+}
+
+/************************
+Navbar Stuff
+*************************/
+.navbar {
+    background-color:$tertiary-light;
+    color: $primary-dark;
+
+}
+
+.my-well {
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding-top:0;
+        width:100%;
+        height:100%;
+    }
+    .navbar-header:before, .navbar-header:after {
+        display:none;
+    }
+
+    .container, .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .xs-center-text {
+        text-align: center;
+    }
+    .right {
+        float: none;
+    }
+    .xs-right {
+        float:right;
+    }
+}
+
+
+.loading-modal {
+    .loading-icon {
+        font-size: 2em;
+    }
+    .modal-content {
+        text-align: center;
+        border:none;
+        box-shadow: none;
+        border-radius: 0;
+        background-color:transparent;
+        color:#FFF;
+    }
+}

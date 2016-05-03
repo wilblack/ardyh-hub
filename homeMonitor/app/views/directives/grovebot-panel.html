@@ -1,0 +1,28 @@
+
+<h3>
+    {{ location }} <small>{{botName}}</small>
+    <span class="right">
+        <i class="glyphicon glyphicon-remove-circle" ng-click="shutdown(botName)"></i>
+        <i class="glyphicon glyphicon-repeat" ng-click="restart(botName)"></i>
+    </span>
+</h3>
+<span class="hidden-xs">temp </span><span class="large-stat" ng-show="units.temp === 'c'">{{values.temp | number: 1}} &deg;C</span>
+<span class="large-stat" ng-show="units.temp === 'f'">{{celsius2fahrenheit(values.temp) | number: 1}}&degF</span>
+
+
+&nbsp;&nbsp;<span class="hidden-xs">humid </span><span class="item item-text-wrap large-stat">
+    {{values.humidity | number: 1}}%
+</span>
+
+&nbsp;&nbsp;<span class="hidden-xs">light </span><span class="item item-text-wrap large-stat">
+    {{values.light | number: 0}} </span>
+</span>
+
+&nbsp;&nbsp;<span class="hidden-xs">lux </span><span class="item item-text-wrap large-stat">
+    {{values.lux | number: 1}} </span>
+</span>
+<div>
+    <small>Last updated {{values.timestamp}}</small>
+</div>
+
+

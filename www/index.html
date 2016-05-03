@@ -1,0 +1,65 @@
+<html>
+<body>
+ARDYH HUB
+
+<div id="msg"></div>
+<script>
+    window.onload = function() {
+        DOMAIN = "192.168.0.105:9093";
+        SOCKET_URL = "ws://" + DOMAIN + "/ws";
+        
+        console.log("opening socket connection to " + SOCKET_URL);
+        
+
+        updateDisplay = function(data){
+            var msgEl = document.getElementById("msg");
+            var spdEl = document.getElementById("spd");
+            var durationEl = document.getElementById("duration");
+            var distEl = document.getElementById("dist");
+
+            msgEl.innerHTML = JSON.stringify(data);
+            // spdEl.innerHTML = data.spd.toFixed(1);
+            // durationEl.innerHTML = data.duration.toFixed(2);
+            // distEl.innerHTML = data.dist.toFixed(2);
+
+
+        };
+
+        socket = new WebSocket(SOCKET_URL);
+
+        
+        socket.onopen = function(){
+            console.log("connection opened....");
+            handshake = {"text": "Hello from the browser"};
+            var out = JSON.stringify(handshake);
+            socket.send(out);
+        };
+
+        socket.onmessage = function(msg) {
+            /*
+            Listens for
+            - sensor_values
+            - new - This should have a camera IP address un the keyword 'camera_url'. 
+            */
+
+            var data = JSON.parse(msg.data);
+            console.log("['onmessage'] ", data);
+            updateDisplay(data);
+        };
+
+        socket.onclose = function(){
+            //alert("connection closed....");
+            console.log("The connection has been closed.");  
+        };
+
+        socket.onerror = function(e){
+            console.log("The was an error.", e);
+ 
+        };
+
+
+    };
+</script>
+</body>
+
+</html>

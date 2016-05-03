@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-lg-6" ng-repeat="bot in groveBots track by $index">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div grovebot-panel bot-name="bot.name" location="bot.location" values="bot.values"></div>
+            </div>
+            <div class="panel-body">
+                <div bot-graphs bot-name="bot.name" values="rpi1.values" show-filters="false"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

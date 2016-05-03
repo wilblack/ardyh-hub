@@ -1,0 +1,12 @@
+<div class="bot-graphs">
+  <div ng-if="true" class="flex-container">
+    <button class="btn" ng-class="{'btn-success':timestampFilter == 'last-7-days'}" ng-click="timeFilterCallback('last-7-days')">last week</button>
+    <button class="btn" ng-class="{'btn-success':timestampFilter == 'last-3-days'}" ng-click="timeFilterCallback('last-3-days')">last 3 days</button>
+    <button class="btn" ng-class="{'btn-success':timestampFilter == 'last-1-days'}" ng-click="timeFilterCallback('last-1-days')">last 24</button>
+    <button class="btn" ng-class="{'btn-success':timestampFilter == 'recent'}" ng-click="timeFilterCallback('recent')">Last 6 hrs</button>
+  </div>
+  <div class="">Showing {{ numValues }} entries, {{ start | date : 'medium' }} ({{start.valueOf()}}) through {{ end | date : 'medium' }} ({{start.valueOf()}})</div>
+
+</div>
+
+<nvd3 options="wtf.multiChartOptions" data="wtf.multiChart" config="config" api="api"></nvd3>
