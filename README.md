@@ -14,7 +14,7 @@ For developement you should run this server on your local machine.
 
 ## Set up
 
-## Mosiqutto
+## Mosquitto
 RPI Clients will publish to the channel `ardyh/bots/BOT_NAME`
 
 mosquitto_sub -t "ardyh/bots/rpi1"
