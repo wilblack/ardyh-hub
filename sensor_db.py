@@ -22,7 +22,7 @@ class Db(object):
         ]
 
     # Archives hould be name with boit name in decimal form.
-    bots = ['ardyh.bots.rpi1', 'ardyh.bots.rpi3']
+    bots = ['ardyh.bots.rpi1', 'ardyh.bots.rpi2', 'ardyh.bots.rpi3']
     grovebot_archive = [
         'DS:temp:GAUGE:30:0:100',
         'DS:humidity:GAUGE:30:0:100',
